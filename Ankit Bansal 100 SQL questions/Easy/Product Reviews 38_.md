@@ -10,8 +10,7 @@ Your query should return the review_id,product_id, and review_text for each revi
 
 
 
-```
-sql
+```sql
 
 select 
 	review_id,
