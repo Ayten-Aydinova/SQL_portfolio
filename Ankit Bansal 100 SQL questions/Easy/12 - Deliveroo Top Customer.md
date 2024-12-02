@@ -4,9 +4,7 @@ You are provided with data from a food delivery service called Deliveroo. Each o
 
 ### Solution Query
 
-```
-
-sql
+```sql
 
 
 select 
