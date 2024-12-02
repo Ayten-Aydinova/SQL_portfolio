@@ -1,22 +1,24 @@
-###  Electricity Consumption 6
+###  Math Champions 11
 
-You have access to data from an electricity billing system, detailing the electricity usage and cost for specific households over billing periods in the years 2023 and 2024. Your objective is to present the total electricity consumption, total cost and average monthly consumption for each household per year display the output in ascending order of each household id & year of the bill.
- 
- 
+You are provided with two tables: Students and Grades. Write a SQL query to find students who have higher grade in Math than the average grades of all the students together in Math. Display student name and grade in Math order by grades.Tables: Books
+
 
 
 
 ### Solution Query
 
-```sql
-select  
-	household_id,
-	left(billing_period,4) as bil_year,
-	sum(consumption_kwh) as consumption ,
-	sum(total_cost) as total_cost,
-avg(consumption_kwh) as avg_consumption
-from electricity_bill
-group by household_id,left(billing_period,4)
-order by household_id,bil_year asc;
+```
+
+sql
+
+
+select 
+	student_name,grade from 
+	students s
+ 		join grades g on s.student_id=g.student_id
+		where subject='Math' and grade >(select avg(grade) from grades where subject='Math')
+order by grade;
+
+
 ```
 
