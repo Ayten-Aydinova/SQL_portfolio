@@ -7,9 +7,7 @@ You are provided with two tables: Students and Grades. Write a SQL query to find
 
 ### Solution Query
 
-```
-
-sql
+```sql
 
 
 select 
