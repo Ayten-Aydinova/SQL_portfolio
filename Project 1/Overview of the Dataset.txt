@@ -1,0 +1,34 @@
+Overview of the Dataset
+The dataset used for this study includes transaction information for a number of different cities. The following columns are part of the dataset:
+
+TRANSACTION_ID: A special number assigned to every transaction.
+CITY: The place where the deal took place.
+TRANSACTION_DATE: The day on which the deal was completed.
+CARD_TYPE: The kind of card (debit or credit) that was used for the transaction.
+EXP_TYPE: The expense category (e.g., travel, groceries).
+GENDER: The customer's gender related to the transaction.
+AMOUNT: The transaction's monetary value.
+Goal
+By examining a genuine dataset and drawing conclusions about transactions, spending patterns, and trends, this project aims to showcase SQL proficiency.
+
+Key Analysis
+
+Determined the proportion of total spending by female consumers for each category of expense.
+Determined each city's minimum and maximum transaction dates.
+Identified the combination of card type and spending type that grew the fastest month over month in January 2014.
+Weekend transactions were extracted and examined.
+Calculated important indicators including overall spending and growth patterns by examining transaction data.
+
+
+
+Skills Demonstrated
+
+GROUP BY, MAX, MIN, and conditional logic are used for data aggregation and filtering.
+Month-over-month growth and weekend insights can be extracted by date manipulation.
+solving complicated business problems by combining logical conditions.
+Result
+This research demonstrates my proficiency with SQL procedures, which is essential for data analysis tasks, in analyzing structured datasets and deriving insightful conclusions. It also demonstrates my expertise in trend analysis, date-based inquiries, and consumer segmentation.
+
+
+
+
