@@ -1,0 +1,47 @@
+
+
+
+Dataset Overview
+This project analyzes a dataset containing Olympic data, including athletes, their performances, and the details of medals won. The dataset consists of two tables:
+
+Table 1: Athlete Details
+
+ATHLETE_ID: Unique identifier for athletes.
+GAMES: The name of the Olympic games.
+YEAR: Year of the games.
+SEASON: Indicates Summer or Winter Olympics.
+CITY: Host city of the games.
+SPORT: The category of the sport.
+EVENT: Specific event within the sport.
+MEDAL: Type of medal won (Gold, Silver, Bronze).
+Table 2: Athlete Demographics
+
+ID: Identifier matching ATHLETE_ID.
+NAME: Athlete's name.
+SEX: Gender of the athlete.
+HEIGHT: Athlete's height.
+WEIGHT: Athlete's weight.
+TEAM: Country or team represented by the athlete.
+Purpose
+This project aims to showcase SQL skills by analyzing Olympic data to uncover insights about athletes, teams, and events.
+
+Key Analyses
+
+Identified the team that has won the maximum gold medals over the years.
+Calculated total silver medals won by each team and determined the year in which each team won the most silver medals.
+Found the player with the maximum gold medals among those who have won only gold medals (never silver or bronze).
+Identified the player(s) with the maximum gold medals in each year, handling ties with a comma-separated list.
+Determined the event and year in which India won its first gold, silver, and bronze medals.
+Found players who won gold medals in both Summer and Winter Olympics.
+Identified players who won gold, silver, and bronze medals in a single Olympics, listing their names and the year.
+Highlighted players who won gold medals in the same event in three consecutive Summer Olympics, starting from 2000.
+Skills Demonstrated
+
+Advanced SQL techniques for aggregating and filtering data (GROUP BY, HAVING, window functions).
+Joins between multiple tables to merge athlete and performance data.
+Conditional queries and subqueries to handle complex conditions (e.g., consecutive wins, multi-medal analysis).
+Text aggregation for managing tied results.
+Outcome
+This project demonstrates proficiency in SQL for exploring multi-dimensional datasets, 
+extracting insights, and answering complex queries. It highlights capabilities in sports 
+data analytics and understanding historical performance trends in the Olympics.
