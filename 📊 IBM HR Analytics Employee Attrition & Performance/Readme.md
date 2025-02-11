@@ -4,14 +4,21 @@
 This project analyzes employee attrition trends using SQL. By examining key HR metrics, we aim to uncover factors contributing to employee turnover and gain insights into workforce management.
 
 📂 Dataset Information
+
 The dataset contains various employee attributes, including job satisfaction, tenure, salary, and attrition status. Key columns include:
 
 AGE: Employee's age
+
 ATTRITION: Whether the employee has left the company (Yes/No)
+
 DEPARTMENT: Employee's department
+
 JOBSATISFACTION: Employee's self-reported job satisfaction (scale of 1-4)
+
 TOTALWORKINGYEARS: Total years of experience
+
 YEARSATCOMPANY: Years spent at the current company
+
 🎯 Key Business Questions
 This analysis focuses on answering critical HR-related questions, such as:
 
