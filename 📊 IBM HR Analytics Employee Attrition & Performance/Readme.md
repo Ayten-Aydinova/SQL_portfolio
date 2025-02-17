@@ -1,41 +1,67 @@
-📊 IBM HR Analytics: Employee Attrition & Performance
+```
+---Employee Attrition Analysis
+--1.Calculate the attrition rate (percentage of employees who left the company).
+select
+    (count(case
+        when attrition='Yes' then 1  end)/count(*))*100
+from hr_data;
 
-🔍 Project Overview
+--2.Find the average age of employees who have left.
+select 
+    trunc(avg(age)) 
+        from hr_data
+            where attrition='Yes';
 
-This project analyzes employee attrition trends using SQL. 
+---Identify the top 5 departments with the highest attrition rates.
 
-By examining key HR metrics, we aim to uncover factors contributing to employee turnover and gain insights into workforce management.
 
-📂 Dataset Information
+select 
+    department,
+    ratio
+from (
+select department,
+    round((count(case
+        when attrition='Yes' then 1  end)/count(*))*100,2) as ratio,
+        row_number() over(order by round((count(case
+        when attrition='Yes' then 1  end)/count(*))*100,2)) rn
+from hr_data
+    group by department
+    order by ratio desc)
+where rn <=5;
 
-The dataset contains various employee attributes, including job satisfaction, tenure, salary, and attrition status. 
+---4.Calculate the average monthly income 
+--for employees who stayed vs. employees who left.
 
-Key columns include:
+select 
+    attrition,
+    round(avg(monthlyincome),2) avg_income
+from hr_data
+    group by attrition;
 
-AGE: Employee's age
+--Determine if there is any correlation between job satisfaction and attrition.
 
-ATTRITION: Whether the employee has left the company (Yes/No)
+select 
+    jobsatisfaction,
+    sum(case when attrition='Yes' then 1 else 0 end )as left_job,
+    sum(case when attrition='No' then 1 else 0 end )as stayed_job
+from hr_data
+    group by jobsatisfaction;
 
-DEPARTMENT: Employee's department
+SELECT 
+  ATTRITION,
+  AVG(JOBSATISFACTION) AS avg_job_satisfaction
+FROM 
+  hr_data
+GROUP BY 
+  ATTRITION;
+  
+---Find the employees with the longest tenure who have left the company.
 
-JOBSATISFACTION: Employee's self-reported job satisfaction (scale of 1-4)
 
-TOTALWORKINGYEARS: Total years of experience
-
-YEARSATCOMPANY: Years spent at the current company
-
-🎯 Key Business Questions
-This analysis focuses on answering critical HR-related questions, such as:
-
-What is the overall attrition rate?
-
-Which departments have the highest attrition rates?
-
-Is there a correlation between job satisfaction and attrition?
-
-What are the characteristics of employees with the longest tenure who have left?
-
-How does monthly income differ between employees who stayed and those who left?
-
-👉 For SQL queries and solutions, please refer to the queries.sql file.
-
+SELECT 
+    EMPLOYEENUMBER, 
+    YEARSATCOMPANY
+FROM hr_data
+WHERE ATTRITION = 'Yes'
+ORDER BY YEARSATCOMPANY DESC;
+```
