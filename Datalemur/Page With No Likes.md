@@ -5,8 +5,7 @@ Write a query to return the IDs of the Facebook pages that have zero likes. The 
 
 ### Solution Query
 
-```
-select 
+```select 
   p.page_id
 from pages p 
   left join page_likes  Pl 
