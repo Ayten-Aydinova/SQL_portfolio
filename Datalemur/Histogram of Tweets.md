@@ -9,7 +9,8 @@ In other words, group the users by the number of tweets they posted in 2022 and 
 
 ### Solution Query
 
-```SELECT 
+```sql
+SELECT 
   tweet_count_per_user AS tweet_bucket, 
   COUNT(user_id) AS users_num 
 FROM (
